@@ -2,7 +2,7 @@
 VRC向けのBlenderアドオン
 
 ## バージョンについて
-v1.0
+v2.0
 
 v{メジャーバージョン}.{マイナーバージョン・バグフィックス}
 
@@ -10,7 +10,12 @@ v{メジャーバージョン}.{マイナーバージョン・バグフィック
 1. マイナーバージョン：メジャーバージョンの変更外の機能追加、バグの修正単位（コード改善含む）
 
 ## 機能一覧
-- ボーン名称置換
+* ボーン名称置換
+* シェイプキーに「vrc.」を一律付与
+* Maya Quiche_v.2系のfbxデータの補完
+1. ボーン構造が、「Armature->Armature(ボーン)->Hips」になってしまう現象の「Armature(ボーン)」削除
+2. シェイプキーに「vrc.」を一律付与
+
 
 
 ## 使用方法
@@ -44,7 +49,7 @@ v{メジャーバージョン}.{マイナーバージョン・バグフィック
 ## 機能使用方法
 
 ### ボーン名称の置換
-1. 「Object Mode」でモデルのアーマチュアを選択すると、「Tools」に「VRCTools」の「Bone Rename All」が有効になるのでクリック
+1. 「Object Mode」でモデルのアーマチュアを選択すると、「Tools」に「VRCTools->Bone Rename All」が有効になるのでクリック
 
 ![実行](https://github.com/Himakuma/blender-vrc-tools/blob/master/doc/img/run_0100.jpg "使用方法")
 
@@ -59,4 +64,18 @@ v{メジャーバージョン}.{マイナーバージョン・バグフィック
 4. 「検索文字列」、「置き換え文字列」を入力して、「OK」をクリックで、ボーンの名称を置換
 
 ![実行](https://github.com/Himakuma/blender-vrc-tools/blob/master/doc/img/run_0400.jpg "使用方法")
+
+
+### シェイプキーに「vrc.」を一律付与
+1. 「Object Mode」でモデルのメッシュを選択すると、「Tools」に「VRCTools->ShapeKey Add Vrc Prefix」が有効になるのでクリック
+
+![実行](https://github.com/Himakuma/blender-vrc-tools/blob/master/doc/img/ShapeKeyAddVrcPrefix_0100.jpg "使用方法")
+
+
+### Maya Quiche_v.2系のfbxデータの補完
+1. 「Object Mode」でモデルのメッシュを選択すると、「Tools」に「VRCTools->Maya(Quiche_v.2~ fbx)」が有効になるのでクリック
+
+※このツイートの処理を自動化　https://twitter.com/muta_shinki/status/1042296181437558784
+
+![実行](https://github.com/Himakuma/blender-vrc-tools/blob/master/doc/img/Maya_Quiche_v.2fbx__0100.jpg "使用方法")
 
