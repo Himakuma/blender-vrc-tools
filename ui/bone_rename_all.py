@@ -26,7 +26,7 @@ class KUMATTASS_OT_bone_rename_all(bpy.types.Operator):
     searchModes = [
         ("Forward", "Forward match", ""),
         ("Backward", "Backward match", ""),
-        ("Perfect", "Exact match", ""),
+        ("Exact", "Exact match", ""),
         ("RegularExpression", "Regular expression", "")
     ]
 
@@ -37,7 +37,7 @@ class KUMATTASS_OT_bone_rename_all(bpy.types.Operator):
 
     @classmethod
     def poll(self, context):
-        return context.active_object.type == 'MESH'
+        return context.active_object.type == 'ARMATURE'
 
     def execute(self, context):
         if len(self.search_str) == 0:
@@ -53,14 +53,14 @@ class KUMATTASS_OT_bone_rename_all(bpy.types.Operator):
         # ダイアログ
         return context.window_manager.invoke_props_dialog(self)
 
-    def convert_reg_str(modeStr: str, searchStr: str) -> str:
+    def convert_reg_str(self, modeStr: str, searchStr: str) -> str:
         """モードに合わせて、検索文字列を正規表現に変換
         Args:
             modeStr: モード
             searchStr: 検索文字列
         """
 
-        if modeStr == "RegularExpression":
+        if modeStr == "RegularExpression" or modeStr == "Exact":
             return searchStr
         else:
             regStr = re.escape(searchStr)
@@ -70,4 +70,4 @@ class KUMATTASS_OT_bone_rename_all(bpy.types.Operator):
         elif modeStr == "Backward":
             return regStr + "$"
 
-        return ""
+        return None
