@@ -2,7 +2,7 @@
 VRC向けのBlenderアドオン
 
 ## バージョンについて
-v2.0
+v3.0
 
 v{メジャーバージョン}.{マイナーバージョン・バグフィックス}
 
@@ -44,7 +44,7 @@ v{メジャーバージョン}.{マイナーバージョン・バグフィック
 ![インストール](https://github.com/Himakuma/blender-vrc-tools/blob/master/doc/image/004.jpg "使用方法")
 
 
-## 機能使用方法
+## 操作方法
 
 ### ボーン名の部分置換（前方一致、後方一致、完全一致、正規表現）
 
@@ -58,17 +58,17 @@ v{メジャーバージョン}.{マイナーバージョン・バグフィック
 
 
 
+<br>
 
 
-
-### シェイプキーに「vrc.」を一律付与
+### シェイプキーに「vrc.」を一括付与
 1. モデルのメッシュを選択すると、「ShapeKey Add VRC Prefix」が有効になるので、押下
 
 ![インストール](https://github.com/Himakuma/blender-vrc-tools/blob/master/doc/image/007.jpg "使用方法")
 
+<br>
 
-
-### Maya Quiche_v.2系のfbxデータの補完
+### Maya キッシュ v.2系のfbxデータ補完
 1. モデルを選択すると、「Maya(Quiche v.2)」が有効になるのでクリック
 
 ※このツイートの処理を自動化　https://twitter.com/muta_shinki/status/1042296181437558784
