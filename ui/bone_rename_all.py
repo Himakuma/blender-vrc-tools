@@ -20,6 +20,9 @@ class KUMATTASS_OT_bone_rename_all(bpy.types.Operator):
             ("*", "Backward match"): "後方一致",
             ("*", "Exact match"): "部分一致",
             ("*", "Regular expression"): "正規表現",
+            ("*", "Replacement"): "置換",
+            ("*", "Bone Rename All"): "ボーン名の一括置換",
+
         }
     }
 
@@ -51,6 +54,7 @@ class KUMATTASS_OT_bone_rename_all(bpy.types.Operator):
 
     def invoke(self, context, event):
         # ダイアログ
+        self.bl_label = bpy.app.translations.pgettext("Bone Rename All")
         return context.window_manager.invoke_props_dialog(self)
 
     def convert_reg_str(self, modeStr: str, searchStr: str) -> str:
