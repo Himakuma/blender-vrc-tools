@@ -10,11 +10,11 @@ v{メジャーバージョン}.{マイナーバージョン・バグフィック
 1. マイナーバージョン：メジャーバージョンの変更外の機能追加、バグの修正単位（コード改善含む）
 
 ## 機能一覧
-* ボーン名称置換
-* シェイプキーに「vrc.」を一律付与
-* Maya Quiche_v.2系のfbxデータの補完
-1. ボーン構造が、「Armature->Armature(ボーン)->Hips」になってしまう現象の「Armature(ボーン)」削除
-2. シェイプキーに「vrc.」を一律付与
+* ボーン名の部分置換（前方一致、後方一致、完全一致、正規表現）
+* シェイプキーに「vrc.」を一括付与
+* Maya キッシュ v.2系のfbxデータ補完
+    - ボーン構造が、「Armature->Armature(ボーン)->Hips」の場合、「Armature(ボーン)」削除
+    - シェイプキーに「vrc.」を一括付与
 
 
 
@@ -25,57 +25,53 @@ v{メジャーバージョン}.{マイナーバージョン・バグフィック
 
 2. ダウンロードファイルを解凍（「src」配下を使用）
 
-3. 「File->User Preferences」をクリック
+3. 「Edit->Preferences」を押下
 
-![インストール](https://github.com/Himakuma/blender-vrc-tools/blob/master/doc/img/install_0100.jpg "使用方法")
+![インストール](https://github.com/Himakuma/blender-vrc-tools/blob/master/doc/image/001.jpg "使用方法")
 
 
-4. 「Add-ons」タグを選択、「Install Add-on from File」をクリック
+4. 「Add-ons」タグを選択、「Install」を押下して、ダウンロードした「blender-vrc-tools.zip」を選択
 
-![インストール](https://github.com/Himakuma/blender-vrc-tools/blob/master/doc/img/install_0200.jpg "使用方法")
+![インストール](https://github.com/Himakuma/blender-vrc-tools/blob/master/doc/image/002.jpg "使用方法")
 
-5. 「Install Add-on from File」をクリック、ダウンロードした「vrc_tools.py」を選択
 
-![インストール](https://github.com/Himakuma/blender-vrc-tools/blob/master/doc/img/install_0300.jpg "使用方法")
+5. アドオンの一覧に表示される「VRCTools」を、チェックをして有効化
 
-6. アドオンの一覧に表示される
+![インストール](https://github.com/Himakuma/blender-vrc-tools/blob/master/doc/image/003.jpg "使用方法")
 
-![インストール](https://github.com/Himakuma/blender-vrc-tools/blob/master/doc/img/install_0400.jpg "使用方法")
+6. 「Tool」に「VRCTools」が表示される
 
-7. チェックをつけて、アドオンを有効化
+![インストール](https://github.com/Himakuma/blender-vrc-tools/blob/master/doc/image/004.jpg "使用方法")
 
-![インストール](https://github.com/Himakuma/blender-vrc-tools/blob/master/doc/img/install_0500.jpg "使用方法")
 
 ## 機能使用方法
 
-### ボーン名称の置換
-1. 「Object Mode」でモデルのアーマチュアを選択すると、「Tools」に「VRCTools->Bone Rename All」が有効になるのでクリック
+### ボーン名の部分置換（前方一致、後方一致、完全一致、正規表現）
 
-![実行](https://github.com/Himakuma/blender-vrc-tools/blob/master/doc/img/run_0100.jpg "使用方法")
+1. モデルを選択すると、「Bone Rename All」が有効になるので、押下
 
-2. ダイアログ画面が表示される
+![インストール](https://github.com/Himakuma/blender-vrc-tools/blob/master/doc/image/005.jpg "使用方法")
 
-![実行](https://github.com/Himakuma/blender-vrc-tools/blob/master/doc/img/run_0200.jpg "使用方法")
+2. 表示されたダイアログに、「検索文字列」、「置換文字列」、「検索方式」を入力して、「OK」を押下
 
-3. 「検索方式」を選択
+![インストール](https://github.com/Himakuma/blender-vrc-tools/blob/master/doc/image/006.jpg "使用方法")
 
-![実行](https://github.com/Himakuma/blender-vrc-tools/blob/master/doc/img/run_0300.jpg "使用方法")
 
-4. 「検索文字列」、「置き換え文字列」を入力して、「OK」をクリックで、ボーンの名称を置換
 
-![実行](https://github.com/Himakuma/blender-vrc-tools/blob/master/doc/img/run_0400.jpg "使用方法")
+
 
 
 ### シェイプキーに「vrc.」を一律付与
-1. 「Object Mode」でモデルのメッシュを選択すると、「Tools」に「VRCTools->ShapeKey Add Vrc Prefix」が有効になるのでクリック
+1. モデルのメッシュを選択すると、「ShapeKey Add VRC Prefix」が有効になるので、押下
 
-![実行](https://github.com/Himakuma/blender-vrc-tools/blob/master/doc/img/ShapeKeyAddVrcPrefix_0100.jpg "使用方法")
+![インストール](https://github.com/Himakuma/blender-vrc-tools/blob/master/doc/image/007.jpg "使用方法")
+
 
 
 ### Maya Quiche_v.2系のfbxデータの補完
-1. 「Object Mode」でモデルのメッシュを選択すると、「Tools」に「VRCTools->Maya(Quiche_v.2~ fbx)」が有効になるのでクリック
+1. モデルを選択すると、「Maya(Quiche v.2)」が有効になるのでクリック
 
 ※このツイートの処理を自動化　https://twitter.com/muta_shinki/status/1042296181437558784
 
-![実行](https://github.com/Himakuma/blender-vrc-tools/blob/master/doc/img/Maya_Quiche_v.2fbx__0100.jpg "使用方法")
+![インストール](https://github.com/Himakuma/blender-vrc-tools/blob/master/doc/image/008.jpg "使用方法")
 
